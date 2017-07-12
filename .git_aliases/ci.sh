@@ -11,9 +11,9 @@ function main(){
   fi
 
   local branch=$(git rev-parse --abbrev-ref HEAD)
-  if [ ! $DIR/_clean.sh ]
+  if [ $DIR/_clean.sh ]
   then
-    git add .
+    git add --all
     local isueNum=$(echo $branch | grep -o "[0-9]\+$")
 
     local comment=$@
