@@ -16,7 +16,12 @@ then
   quietMode="True"
 fi
 
-CONFIG_FILE=$HOME/.bash_profile
+if [ -f $HOME/.bashrc ]
+then
+	CONFIG_FILE=$HOME/.bashrc
+else
+	CONFIG_FILE=$HOME/.bash_profile
+fi
 source $CONFIG_FILE
 
 test -w $CONFIG_FILE &&
